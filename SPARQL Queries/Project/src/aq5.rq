@@ -1,0 +1,61 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?top_11_coldest_states ?checked_if_flu_shot_given ?checked_if_pneumonia_shot_given
+WHERE
+ {    {?x ds:state ?top_11_coldest_states .
+      FILTER (regex(?top_11_coldest_states, "AK", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION 
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "ND", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "ME", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "MN", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "WY", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "MT", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "VT", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "WI", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "NH", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "ID", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } UNION
+      {?x ds:state ?top_11_coldest_states . 
+      FILTER(regex(?top_11_coldest_states, "MI", "i")) .
+      ?x ds:how_often_the_home_health_team_determined_whether_patients_received_a_flu_shot_for_the_current_flu_season ?checked_if_flu_shot_given .
+      ?x ds:how_often_the_home_health_team_determined_whether_their_patients_received_a_pneumococcal_vaccine_pneumonia_shot_ ?checked_if_pneumonia_shot_given .
+      } .
+      
+   }

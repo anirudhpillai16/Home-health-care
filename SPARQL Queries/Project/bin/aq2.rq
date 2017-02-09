@@ -1,0 +1,8 @@
+ PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?x ?state ?frequency_of_starting_timely_checkups ?times_attendents_were_informed_about_drugs
+WHERE
+ { ?x ds:state ?state .
+ ?x ds:how_often_the_home_health_team_began_their_patients_care_in_a_timely_manner ?frequency_of_starting_timely_checkups .
+ ?x ds:how_often_the_home_health_team_taught_patients_or_their_family_caregivers_about_their_drugs ?times_attendents_were_informed_about_drugs
+ }

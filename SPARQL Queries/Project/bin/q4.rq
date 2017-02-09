@@ -1,0 +1,19 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?state ?star_rating ?Times_patients_got_better_at_moving_around ?Times_they_got_better_at_moving_in_and_out_of_bed ?Times_they_got_better_at_bathing ?Times_patients_experienced_less_pain_moving_around ?Times_their_breathing_improved ?Times_their_wounds_healed ?Times_they_got_better_at_taking_their_drugs_correctly ?Times_patients_had_to_be_admitted_to_hospital ?Times_when_their_were_emergency_admits_to_hospital 
+WHERE
+ {    
+ ?x ds:state ?state .
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ ?x ds:how_often_patients_got_better_at_walking_or_moving_around_ ?Times_patients_got_better_at_moving_around .
+ ?x ds:how_often_patients_got_better_at_getting_in_and_out_of_bed_ ?Times_they_got_better_at_moving_in_and_out_of_bed .
+ ?x ds:how_often_patients_got_better_at_bathing ?Times_they_got_better_at_bathing .
+ ?x ds:how_often_patients_had_less_pain_when_moving_around_ ?Times_patients_experienced_less_pain_moving_around .
+ ?x ds:how_often_patients_breathing_improved ?Times_their_breathing_improved .
+ ?x ds:how_often_patients_wounds_improved_or_healed_after_an_operation ?Times_their_wounds_healed .
+ ?x ds:how_often_patients_got_better_at_taking_their_drugs_correctly_by_mouth_ ?Times_they_got_better_at_taking_their_drugs_correctly .
+ ?x ds:how_often_home_health_patients_had_to_be_admitted_to_the_hospital_ ?Times_patients_had_to_be_admitted_to_hospital .
+ ?x ds:how_often_patients_receiving_home_health_care_needed_urgent_unplanned_care_in_the_er_without_being_admitted ?Times_when_their_were_emergency_admits_to_hospital .
+ 
+ }
+ ORDER BY DESC(?star_rating)

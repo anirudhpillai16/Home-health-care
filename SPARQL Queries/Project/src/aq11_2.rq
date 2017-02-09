@@ -1,0 +1,13 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?star_rating ?state (AVG(xsd:float(?Frequency_of_patients_who_had_to_be_admitted_to_the_hospital)) as ?Average_Frequency_of_patients_who_had_to_be_admitted_to_the_hospital) (AVG(xsd:float(?Frequency_of_urgent_unplanned_admissions)) as ?Average_Frequency_of_urgent_unplanned_admissions)
+WHERE
+ {    
+ ?x ds:state ?state .
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ FILTER(?star_rating ='3.0') .
+ ?x ds:how_often_home_health_patients_had_to_be_admitted_to_the_hospital_ ?Frequency_of_patients_who_had_to_be_admitted_to_the_hospital .
+ ?x ds:how_often_patients_receiving_home_health_care_needed_urgent_unplanned_care_in_the_er_without_being_admitted ?Frequency_of_urgent_unplanned_admissions .
+   }
+ GROUP BY ?state ?star_rating

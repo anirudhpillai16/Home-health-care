@@ -1,0 +1,12 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?state ?star_rating ?Ordered_action_to_prevent_pressure_bed_sores ?Included_treatment_to_prevent_these_sores ?Checked_patients_for_the_risk_of_developing_these_sores
+WHERE
+ {    
+ ?x ds:state ?state .
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ ?x ds:how_often_the_home_health_team_took_doctor_ordered_action_to_prevent_pressure_sores_bed_sores_ ?Ordered_action_to_prevent_pressure_bed_sores .
+ ?x ds:how_often_the_home_health_team_included_treatments_to_prevent_pressure_sores_bed_sores_in_the_plan_of_care ?Included_treatment_to_prevent_these_sores .
+ ?x ds:how_often_the_home_health_team_checked_patients_for_the_risk_of_developing_pressure_sores_bed_sores_ ?Checked_patients_for_the_risk_of_developing_these_sores .
+ }
+ 

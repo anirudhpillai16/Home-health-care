@@ -1,0 +1,11 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?timely_checking_gt_80 ?state ?checked_risk_of_falling ?checked_for_depression
+WHERE
+ {    ?x ds:state ?state .
+      ?x ds:how_often_the_home_health_team_began_their_patients_care_in_a_timely_manner ?timely_checking_gt_80 .
+      FILTER(?timely_checking_gt_80 >'80') .
+ 	  ?x ds:how_often_the_home_health_team_checked_patients_risk_of_falling ?checked_risk_of_falling .
+      ?x ds:how_often_the_home_health_team_checked_patients_for_depression ?checked_for_depression .
+   }
+   

@@ -1,0 +1,14 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?state ?star_rating ?Got_better_at_walking ?Got_better_at_getting_in_and_out_of_bed ?Got_better_at_bathing ?Experienced_less_pain_moving_around ?Breathing_improved
+
+WHERE
+ {    
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ ?x ds:state ?state .
+ ?x ds:how_often_patients_got_better_at_walking_or_moving_around_ ?Got_better_at_walking .
+ ?x ds:how_often_patients_got_better_at_getting_in_and_out_of_bed_ ?Got_better_at_getting_in_and_out_of_bed .
+ ?x ds:how_often_patients_got_better_at_bathing ?Got_better_at_bathing .
+ ?x ds:how_often_patients_had_less_pain_when_moving_around_ ?Experienced_less_pain_moving_around .
+ ?x ds:how_often_patients_breathing_improved ?Breathing_improved .
+   }

@@ -1,0 +1,10 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?state ?star_rating
+WHERE
+ {   
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ FILTER(?star_rating >= '3.5') .
+ ?x ds:state ?state .
+ 
+ }

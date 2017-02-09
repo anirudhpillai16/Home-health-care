@@ -1,0 +1,13 @@
+PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?state ?star_rating ?How_often_they_began_timely_checkups ?Diabetic_foot_care ?How_often_patients_were_treated_for_heart_failure_symptoms ?Checked_patients_for_the_risk_of_developing_sores
+WHERE
+ {    
+ ?x ds:state ?state .
+ ?x ds:quality_of_patient_care_star_rating ?star_rating .
+ ?x ds:how_often_the_home_health_team_treated_heart_failure_weakening_of_the_heart_patients_symptoms ?How_often_patients_were_treated_for_heart_failure_symptoms .
+ ?x ds:with_diabetes_how_often_the_home_health_team_got_doctor_s_orders_gave_foot_care_and_taught_patients_about_foot_care_ ?Diabetic_foot_care .
+ ?x ds:how_often_the_home_health_team_checked_patients_for_the_risk_of_developing_pressure_sores_bed_sores_ ?Checked_patients_for_the_risk_of_developing_sores .
+ ?x ds:how_often_the_home_health_team_began_their_patients_care_in_a_timely_manner ?How_often_they_began_timely_checkups .
+  }
+ ORDER BY DESC(?Checked_patients_for_the_risk_of_developing_sores)

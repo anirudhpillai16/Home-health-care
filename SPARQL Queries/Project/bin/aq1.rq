@@ -1,0 +1,7 @@
+ PREFIX ds: <http://data.medicare.gov/resource/tee5-ixt5/>
+
+SELECT ?x ?state ?quality_of_patient_care_star_rating
+WHERE
+ { ?x ds:state ?state .
+ ?x ds:quality_of_patient_care_star_rating ?quality_of_patient_care_star_rating
+   }
